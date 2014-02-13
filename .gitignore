@@ -1,7 +1,7 @@
 ## Repository specific
 
-# Avoid syncing JPG fixture binaries. See fixture/jpg/index.js for dropbox link.
-fixture/**
+# Avoid syncing JPG fixture binaries. See README for dropbox link.
+fixture/
 
 ## OS support
 

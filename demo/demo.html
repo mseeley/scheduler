@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AnimationFrameScheduler demo</title>
+    <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+    <img class="art" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+
+    <img class="grumpy-cat" src="img/grumpy_cat.jpg" />
+    <script src="../lib/stats.min.js"></script>
+    <script src="../lib/shims.js"></script>
+    <script src="../lib/animation-frame-scheduler.js"></script>
+    <script src="../lib/queue.js"></script>
+    <script>
+    // ImageLoader has a dependency on a global queue. Hey, it's only a demo!
+    var scheduler = new global.AnimationFrameScheduler(),
+        queue = new global.Queue(scheduler),
+        stats;
+    
+    // Setup the stats runner if &fps !== false
+    if (/[&?]fps=false[&?]?/.test(location.search) === false) {
+        stats = new Stats();
+        stats.setMode(0); // 0: fps, 1: ms
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+    }
+    </script>
+    <script src="../lib/image-loader.js"></script>
+    <script src="fixture/jpg/index.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>
